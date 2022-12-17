@@ -1,13 +1,14 @@
 import React from 'react';
+import AddNotes from './AddNotes';
 import Note from './Note';
 
-function NodeList() {
+function NodeList({ notes }) {
   return (
     <div className="notes-list">
-      <Note />
-      <Note />
-      <Note />
-      <Note />
+      {notes.map((note) => (
+        <Note id={note.id} text={note.text} date={note.date} />
+      ))}
+      <AddNotes />
     </div>
   );
 }
